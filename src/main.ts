@@ -1,12 +1,12 @@
 import { Heroi } from "./heroi";
 import{ Monstro } from "./monstro";
 import {Acessorio} from "./acessorios";
+import { Nomeador } from "./nomeador";
 
 
-       let nome: string = ''
        let raca:string = ''
        let genero:string = ''
-       let altura: number
+       let altura: number = Math.floor(Math.random() * 25)
        let cor: string = ''
        let categoria: string = ''
        let elementos: string = ''
@@ -26,12 +26,14 @@ import {Acessorio} from "./acessorios";
        let vida: number
 
 
+       console.log(altura,"metros")
+
 let anelFogo = new Acessorio("anel","ferro","fogo")
 let anelForca = new Acessorio("anel","ferro","força")
 let correnteEletrica = new Acessorio("corrente","ouro","eletricidade")
 
 let galou = new Heroi("Galou","Desertica","Masculino",1.80,"Marron","","Areia",90,50,50,75,"adaga","",50,"curto","cura",50,false,"rapido","furtivo","minerador",100)
-galou.getEmoji()
+/* galou.getEmoji()
 galou.getAcessorios()
 galou.setAcessorios(anelFogo)
 galou.setAcessorios(correnteEletrica)
@@ -39,10 +41,10 @@ console.log(galou)
 galou.getAcessorios()
 
 console.log("Removido:",galou.removeAcessorios())
-galou.getAcessorios()
-
+galou.getAcessorios() */
+let monstro
 function criarMonstro(){
-  let monstro = new Monstro(nome,raca,genero,altura,cor,categoria,elementos,velocidade, ataque, forca, defesa, tipoAtaque, alvoAtaque, precisao, alcance, afinidade, idade, evolucao, tipoMovimento, vida, qtaBraco)
+  monstro = new Monstro(Nomeador.getNome(10),raca,genero,altura,cor,categoria,elementos,velocidade, ataque, forca, defesa, tipoAtaque, alvoAtaque, precisao, alcance, afinidade, idade, evolucao, tipoMovimento, vida, qtaBraco)
 }
 
 
