@@ -1,8 +1,11 @@
 import { Acessorio } from "./acessorios"
+import { Vestimenta } from "./vestimenta"
 
 export  abstract class Personagem{
 
  protected abstract emoji : string
+
+ private vestimenta: Vestimenta
 
     public nome: string
     public cor: string
@@ -27,6 +30,7 @@ export  abstract class Personagem{
     private nivel: number
     private vida: number
 
+
     constructor(
             nome: string,
             raca:string,
@@ -47,7 +51,8 @@ export  abstract class Personagem{
             idade: number,
             evolucao: boolean,
             tipoMovimento: string,
-            vida:number
+            vida:number,
+            vestimenta: Vestimenta
     )
     {
         this.nome = nome
@@ -72,8 +77,12 @@ export  abstract class Personagem{
         this.tipoMovimento= tipoMovimento
         this.nivel = 1
         this.vida = vida
+        this.vestimenta = vestimenta
     }
 
+    public equipar(vestimenta: Vestimenta):void{
+        this.vestimenta = vestimenta
+    }
 
     public getAcessorios():void{
 
@@ -113,9 +122,25 @@ export  abstract class Personagem{
     }
 
 
-    correr(){
-        console.log("Correndo!!!")
-    }
+     atacar(personagem: Personagem) : void{
+        personagem.perderVida(this.forca)
+        console.log(`${this.emoji} ${this.nome} está atacando...`)
+     }
+
+    private perderVida(forcaAtaque: number): void{
+        this.vida -= forcaAtaque
+        if(this.vida >0){
+            console.log(`${this.emoji} ${this.nome} agora tem ${this.vida} de vida...`)
+        }
+
+     }
+
+
+    abstract correr():void
+
+    abstract getEmoji():void
+
+
 
     andar(){
         console.log("andando!!!")
@@ -137,9 +162,6 @@ export  abstract class Personagem{
         console.log("investir!!!")
     }
 
-    atacar(){
-        console.log("atacar!!!")
-    }
 
     defender(){
         console.log("defender!!!")

@@ -1,5 +1,7 @@
 
 import { Personagem } from "./personagem";
+import { Vestimenta } from "./vestimenta";
+
 export class Heroi extends Personagem{
 
     private classe: string
@@ -27,7 +29,8 @@ export class Heroi extends Personagem{
                 tipoMovimento: string,
                 classe:string,
                 profissao:string,
-                vida:number){
+                vida:number,
+                vestimenta:Vestimenta){
         super(nome,
             raca,
             genero,
@@ -47,13 +50,20 @@ export class Heroi extends Personagem{
             idade,
             evolucao,
             tipoMovimento,
-            vida)
+            vida,
+            vestimenta)
         this.classe = classe
         this.profissao = profissao
  }
 
-   getEmoji(){
+   getEmoji():void{
     console.log(this.emoji)
    }
+
+   correr(): void {
+       console.log(this.nome," estou correndo")
+   }
+
+
 
 }
