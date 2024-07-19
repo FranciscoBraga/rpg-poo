@@ -8,6 +8,7 @@ export class Heroi extends Personagem{
     private profissao: string
     protected emoji = '\u{1F900}'
 
+
     constructor(nome: string,
                raca:string,
                 genero:string,
@@ -30,7 +31,10 @@ export class Heroi extends Personagem{
                 classe:string,
                 profissao:string,
                 vida:number,
-                vestimenta:Vestimenta){
+                vestimenta:Vestimenta,
+                atacando: boolean,
+                moeda: number
+               ){
         super(nome,
             raca,
             genero,
@@ -51,10 +55,18 @@ export class Heroi extends Personagem{
             evolucao,
             tipoMovimento,
             vida,
-            vestimenta)
+            vestimenta,
+            atacando,
+            moeda
+        )
         this.classe = classe
         this.profissao = profissao
+
  }
+
+    morte(): void {
+        console.log(this.nome,"morri")
+    }
 
    getEmoji():void{
     console.log(this.emoji)
@@ -63,6 +75,12 @@ export class Heroi extends Personagem{
    correr(): void {
        console.log(this.nome," estou correndo")
    }
+
+
+   
+
+
+
 
 
 

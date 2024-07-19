@@ -14,7 +14,7 @@ import { Vestimenta } from "./vestimenta";
        let elementos: string = ''
        let velocidade: number = Calcular.geraValor(50)
        let ataque: number =Calcular.geraValor(100)
-       let forca: number = Calcular.geraValor(250)
+       let forca: number = Calcular.geraValor(25)
        let defesa: number = Calcular.geraValor(50)
        let tipoAtaque: string = ''
        let alvoAtaque: string = ''
@@ -26,7 +26,7 @@ import { Vestimenta } from "./vestimenta";
        let tipoMovimento: string = ''
        let qtaBraco: number = Calcular.geraValor(100)
        let qtaPerna: number =Calcular.geraValor(100)
-       let vida: number = Calcular.geraValor(100000)
+       let vida: number = Calcular.geraValor(10)
 
 
 
@@ -38,7 +38,7 @@ let vestimenta1 = new Vestimenta(Nomeador.getNome(5),Calcular.geraValor(10),Calc
 let vestimenta2 = new Vestimenta(Nomeador.getNome(5),Calcular.geraValor(10),Calcular.geraValor(60))
 let vestimenta3 = new Vestimenta(Nomeador.getNome(5),Calcular.geraValor(10),Calcular.geraValor(60))
 
-let galou = new Heroi("Galou","Desertica","Masculino",1.80,"Marron","","Areia",90,50,50,75,"adaga","",50,"curto","cura",50,false,"rapido","furtivo","minerador",100,vestimenta1)
+let galou = new Heroi("Galou","Desertica","Masculino",1.80,"Marron","","Areia",90,50,50,75,"adaga","",50,"curto","cura",50,false,"rapido","furtivo","minerador",100,vestimenta1,false,100)
 
 console.log(galou)
 /* galou.getEmoji()
@@ -50,16 +50,18 @@ galou.getAcessorios()
 
 console.log("Removido:",galou.removeAcessorios())
 galou.getAcessorios() */
-let monstro = new Monstro(Nomeador.getNome(10),raca,genero,altura,cor,categoria,elementos,velocidade, ataque, forca, defesa, tipoAtaque, alvoAtaque, precisao, alcance, afinidade, idade, evolucao, tipoMovimento, vida, qtaBraco,qtaPerna,vestimenta2)
+let monstro = new Monstro(Nomeador.getNome(10),raca,genero,altura,cor,categoria,elementos,velocidade, ataque, forca, defesa, tipoAtaque, alvoAtaque, precisao, alcance, afinidade, idade, evolucao, tipoMovimento, vida, qtaBraco,qtaPerna,vestimenta2,false,0)
 
 console.log(monstro)
 monstro.getEmoji()
 
 galou.atacar(monstro)
-galou.atacar(monstro)
-galou.atacar(monstro)
 
-console.log(monstro)
+
+console.log(galou)
+
+
+
 
 
 
